@@ -1,6 +1,7 @@
 import axios from 'axios';
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'https://civic-report-backend.onrender.com',
+  withCredentials:true
 });
 api.interceptors.request.use((cfg) => {
   const token = localStorage.getItem('token');

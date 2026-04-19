@@ -13,8 +13,12 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: process.env.CLIENT_URL,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
+app.options('*', cors());
 app.use(express.json());
 // Serve locally-uploaded images (used when Cloudinary is not configured)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
