@@ -30,7 +30,7 @@ export default function NewComplaint() {
       fd.append('description', form.description);
       fd.append('location', form.location);
       if (image) fd.append('image', image);
-      await api.post('/complaints', fd, {
+      await api.post('/api/complaints', fd, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setMsg('✅ Complaint submitted!');

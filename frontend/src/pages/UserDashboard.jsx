@@ -8,13 +8,13 @@ export default function UserDashboard() {
 
   const load = async () => {
     setLoading(true);
-    const { data } = await api.get('/complaints/me');
+    const { data } = await api.get('/api/complaints/me');
     setList(data); setLoading(false);
   };
   useEffect(() => { load(); }, []);
 
   const upvote = async (id) => {
-    try { await api.post(`/complaints/${id}/upvote`); load(); }
+    try { await api.post(`/api/complaints/${id}/upvote`); load(); }
     catch (e) { alert(e.response?.data?.message || 'Failed'); }
   };
 

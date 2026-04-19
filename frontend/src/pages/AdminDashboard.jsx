@@ -25,7 +25,7 @@ export default function AdminDashboard() {
     if (q) params.q = q;
     if (category) params.category = category;
     if (status) params.status = status;
-    const { data } = await api.get('/complaints', { params });
+    const { data } = await api.get('/api/complaints', { params });
     setList(data); setLoading(false);
   };
 
@@ -33,12 +33,12 @@ export default function AdminDashboard() {
   const onSearch = (e) => { e.preventDefault(); load(); };
 
   const updateStatus = async (id, newStatus) => {
-    await api.put(`/complaints/${id}/status`, { status: newStatus });
+    await api.put(`/api/complaints/${id}/status`, { status: newStatus });
     load();
   };
   const remove = async (id) => {
     if (!confirm('Delete this complaint?')) return;
-    await api.delete(`/complaints/${id}`);
+    await api.delete(`/api/complaints/${id}`);
     load();
   };
 
