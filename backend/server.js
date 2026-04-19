@@ -11,7 +11,10 @@ const complaintRoutes = require('./routes/complaintRoutes');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || '*', credentials: true }));
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
 app.use(express.json());
 // Serve locally-uploaded images (used when Cloudinary is not configured)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
