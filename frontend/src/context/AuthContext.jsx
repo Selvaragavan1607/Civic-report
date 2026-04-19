@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const { data } = await api.post('/auth/login', { email, password });
+      const { data } = await api.post('/api/auth/login', { email, password });
       persist(data.token, data.user);
       return data.user;
     } finally { setLoading(false); }
@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
   const register = async (name, email, password) => {
     setLoading(true);
     try {
-      const { data } = await api.post('/auth/register', { name, email, password });
+      const { data } = await api.post('/api/auth/register', { name, email, password });
       persist(data.token, data.user);
       return data.user;
     } finally { setLoading(false); }
