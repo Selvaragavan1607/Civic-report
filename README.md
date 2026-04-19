@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cloud-Based Public Issue Reporting and Resolution System (MERN)
 
 A full-stack MERN application that lets citizens report public issues (potholes, broken street lights, water leakage, garbage overflow, damaged roads) and lets administrators manage and resolve them. Data is stored in **MongoDB Atlas** (cloud), demonstrating cloud computing.
@@ -133,3 +134,7 @@ cd ../frontend && npm install && npm run build
 
 ## License
 MIT — free for educational use.
+=======
+# Civic-report
+Project which helps citizens, to report problems in their locality and officials to solve these problems effectively
+>>>>>>> e8c8618d615e26558b476ce31445616685d9b328
